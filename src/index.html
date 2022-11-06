@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UnitTest</title>
+    <style>
+        .header{
+            background-color:steelblue;
+            color:white;
+            text-align: center;
+        }
+        .header p {
+            max-width: 75%;
+            margin: 1em auto 2em;
+        }
+        .frame-container{
+            text-align: center;
+        }
+        ._btn{
+            text-align: center;
+        }
+        #container{
+            margin-top: 32px;
+        }
+        #container p{
+            font-size: 24px;
+            margin: 32px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div>
+            <h1>Text Creator</h1>
+            <p>Text Creator with unit-test</p>
+        </div>
+    </div>
+    <main>
+        <div class="_btn">
+            <button>click create text</button>
+        </div>
+        <div class="frame-container">
+            <div id="container">
+            </div>
+        </div>
+    </main>
+    <script>
+
+            const textList = [
+            "My ceiling isn't the best, but it's up there.",
+            'I got fired from the calendar factory, just for taking a day off.',
+            "Q: What's the best thing about Switzerland? A: Well, the flag is a big plus.",
+            'The past, present, and future walk into a bar. It was tense.',
+            'I tried to make a belt out of watches. It was a waist of time.',
+            "Why can't Harry Potter tell the difference between his potion pot and his best friend? They're both cauld ron.",
+            "I'm afraid of negative numbers. I'll stop at nothing to avoid them.",
+            "Two antennas got married. The ceremony wasn't much, but the reception was excellent.",
+            'RIP boiling water. You will be mist.',
+            'I met a criminal with a bounty on his head. That was a weird place to keep paper towels.',
+            'I did a theatrical performance about puns. It was a play on words.',
+            'Knowing how to pick locks has opened a lot of doors for me.',
+            'I should have been sad when my flashlight batteries died, but I was delighted.',
+            "Santa Claus's elves are subordinate clauses.",
+            "I'm designing a reversible jacket. I'm excited to see how it turns out.",
+            ];
+
+            let count = 0;
+        
+        // btn click 시 textList를 가져오는 func. 
+        const created = () => {
+            const p = document.createElement('p'); 
+            p.innerHTML = textList[count++] || "Unit test";
+            document.querySelector("#container").prepend(p); // queryselector 선택한 영역 앞 부분에 데이터 삽입. 
+        }
+
+        const createBtn = document.querySelector('button');
+        createBtn.addEventListener('click',created);
+    </script>
+    
+</body>
+</html>
